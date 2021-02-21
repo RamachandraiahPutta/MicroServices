@@ -1,0 +1,17 @@
+server:
+  port: 9191
+
+spring:
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
+
+      bindings:
+        output:
+          binder: kafka
+          destination: published-books
+          group: Book-Publisher-Group
